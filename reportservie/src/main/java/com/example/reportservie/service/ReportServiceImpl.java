@@ -21,6 +21,7 @@ public class ReportServiceImpl {
 	}
 	
 	public List<Report> getAllReports(){
+		log.info("Calling All The Existing Reports From Database..!!");
 		return reportRepository.findAll();
 	}
 	

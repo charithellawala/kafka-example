@@ -22,9 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 @RestController("/v1/api/reports")
 public class ReportController {
 
-//	@Autowired
-//	private ReportRepository reportRepository;
-	
 	@Autowired
 	private ReportServiceImpl reportService;
 
@@ -34,16 +31,9 @@ public class ReportController {
 	@Value("${file.report.directory}")
 	private String reportDirectory;
 
-//	@GetMapping
-//	public List<Report> getReports() {
-//		return reportService.getAllReports();
-//	}
-	
 	@GetMapping("/getall")
 	public ResponseEntity<List<Report>> getReports() {
         return ResponseEntity.ok(reportService.getAllReports());
-		
-		
 	}
 
 	@PostMapping("/report")
