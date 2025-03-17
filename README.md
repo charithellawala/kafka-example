@@ -1,7 +1,7 @@
 **********************************************************************************************************
 
 ************************** For Local Run with Docker Compose ********************************************
-    *.) if you are using eclise, right click on each project run maven build.. , and set the goal to "clean install".
+    
     *.) Run "docker build -t reportservie ." and "docker build -t filewriter ." inside each repo services.
 	*.) then run "docker-compose --build" command inside download repository folder.
     *.) Run a sample post api from postman or swagger and see whether a report is generated iside the "Container", such as
