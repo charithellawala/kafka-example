@@ -47,16 +47,12 @@ public class KafkaConsumerConfig {
 
 			// Generate the report file
 			try (FileWriter writer = new FileWriter(filePath)) {
+				
 				writer.write("Report Name, Report Type, Status, Filelink " + "\n");
-				
 				writer.write(reportName +","+ reportType + ","+ "In-Progress" + "," + filePath);				
-//				writer.write("Report Name: " + reportName + "\n");
-//				writer.write("Report Type: " + reportType + "\n");
-//				writer.write("Data: Mocked data for " + reportName + "\n");
-				
 		    	log.info("Report generated in the directory: {}" + filePath);
 
-			} catch (IOException e) {
+			} catch (Exception e) {
 				log.error("Error Occured While Generating the Report: " + e.getMessage());
 			}
 		});

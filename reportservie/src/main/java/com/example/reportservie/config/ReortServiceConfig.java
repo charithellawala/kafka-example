@@ -14,7 +14,7 @@ public class ReortServiceConfig {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/vi/api/**") 
-						.allowedOrigins("http://localhost:4200") // dissable csrf throw web requests
+						//.allowedOrigins("http://localhost:4200") // dissable csrf throw web requests
 						.allowedMethods("GET", "POST", "PUT", "DELETE") 
 						.allowedHeaders("*") 
 						.allowCredentials(true); 
