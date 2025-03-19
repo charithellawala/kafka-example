@@ -1,6 +1,10 @@
 package com.example.reportservie.model;
 
+import com.example.reportservie.common.model.ReportType;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,7 +19,9 @@ public class Report {
     private Long id;
 
     private String reportName;
-    private String reportType;
+    
+    @Enumerated(EnumType.STRING)
+    private ReportType reportType;
     private String status;
     private String fileLink;
 

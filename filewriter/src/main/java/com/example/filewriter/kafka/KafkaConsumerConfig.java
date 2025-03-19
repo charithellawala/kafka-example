@@ -24,11 +24,14 @@ public class KafkaConsumerConfig {
 
 	@Value("${file.report.directory}")
 	private String reportDirectory;
+	
+	@Value("${topic.name}")
+	private String topic;
 
 	@Bean
 	public KStream<String, String> kafkaStream(StreamsBuilder streamsBuilder) {
 		// Consume messages from the "report-requests" topic
-		KStream<String, String> stream = streamsBuilder.stream("report-requests",
+		KStream<String, String> stream = streamsBuilder.stream(topic,
 				Consumed.with(Serdes.String(), Serdes.String()));
 
 		// Process each message

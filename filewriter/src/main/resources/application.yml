@@ -4,6 +4,9 @@ server:
 file:
   report:
     directory: /reports
+    
+topic:
+  name: report-requests
 
 spring:
   datasource:

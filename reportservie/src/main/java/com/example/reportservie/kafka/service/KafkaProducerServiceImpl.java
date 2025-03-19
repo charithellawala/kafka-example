@@ -17,7 +17,7 @@ public class KafkaProducerServiceImpl {
 
 	public void sendMessage(String topic, String message) {
 		try {
-			log.info("Sending Topic report Type : ", message + " to Topic: " + topic);
+			log.info("Sending Topic ReportName, Report Type & ReportId : "+ message + " to Topic: " + topic);
 			kafkaTemplate.send(topic, message);
 			log.info("Report Topic send...!!");
 		} catch (Exception ex) {

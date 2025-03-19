@@ -43,8 +43,9 @@ public class ReportController {
 		String filePath = reportDirectory + report.getReportName() + ".csv";
 		report.setFileLink(filePath);
 
-		kafkaProducerService.sendMessage("report-requests", report.getReportName() + " ," + report.getReportType());
-		return ResponseEntity.ok(reportService.createReport(report));
+		Report savedReport = reportService.createReport(report);
+		kafkaProducerService.sendMessage("report-requests", report.getReportName() + " ," + report.getReportType() +" ,"+ savedReport.getId());
+		return ResponseEntity.ok(savedReport);
 	}
 	
 

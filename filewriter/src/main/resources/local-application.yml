@@ -4,6 +4,9 @@ server:
 file:
   report:
     directory: D:\Chargepoint\reports/
+    
+topic:
+  name: report-requests
 
 spring:
   datasource:
