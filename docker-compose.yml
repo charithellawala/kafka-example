@@ -38,4 +38,4 @@ services:
       SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       FILE_REPORT_DIRECTORY: /reports
     volumes:
-      - ./reports:/reports # Mount a volume for report files
+      - ./reports:/reports

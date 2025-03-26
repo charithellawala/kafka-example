@@ -34,7 +34,7 @@ public class KafkaConsumerConfig {
 		KStream<String, String> stream = streamsBuilder.stream(topic,
 				Consumed.with(Serdes.String(), Serdes.String()));
 
-		// Process each message
+		// loop and Process message
 		stream.foreach((key, value) -> {
 			String[] parts = value.split(",");
 			String reportName = parts[0];
